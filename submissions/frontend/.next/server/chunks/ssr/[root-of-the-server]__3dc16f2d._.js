@@ -1,0 +1,3 @@
+module.exports=[85908,a=>{a.v({className:"montserrat_56e7b423-module__kR4QwW__className"})},27572,a=>{"use strict";a.s(["default",()=>f,"metadata",()=>e],27572);var b=a.i(7997),c=a.i(85908);let d={className:c.default.className,style:{fontFamily:"'Montserrat', 'Montserrat Fallback'",fontStyle:"normal"}};null!=c.default.variable&&(d.variable=c.default.variable);let e={title:"Каталог",description:"Интерактивный магазин с фильтрами, корзиной и SSR"};function f({children:a}){return(0,b.jsx)("html",{lang:"en",children:(0,b.jsx)("body",{className:d.className,children:a})})}}];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__3dc16f2d._.js.map

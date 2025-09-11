@@ -1,0 +1,354 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0;
+    max-width: none;
+  }
+  
+  .header {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0 24px;
+    border-radius: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .headerTop {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .badges {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .error {
+    background: var(--danger);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 0;
+    margin: 0;
+    font-size: 14px;
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--border);
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  .mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 4px;
+    min-height: 0;
+    position: relative; 
+  }
+  
+  .chartArea {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .noData {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--muted);
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 202px;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .bottomFilters {
+    flex-shrink: 0;
+    border-top: 1px solid var(--border);
+    background: var(--panel-2);
+    max-height: 40vh;
+    overflow-y: auto;
+  }
+  
+  .filtersPanel {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 24px;
+  }
+  
+  .filtersGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .filterSection {
+    display: flex;
+    flex-direction: column;
+    min-height: 120px;
+  
+    h4 {
+      margin: 0 0 12px 0;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+    }
+  
+    .select, .input {
+      min-height: 40px;
+      transition: all 0.3s ease;
+      
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+  
+    .btn {
+      align-self: flex-start;
+      margin-top: auto;
+      min-width: 120px;
+      transition: all 0.3s ease;
+      
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+  }
+  
+  .periodButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    flex: 1;
+  }
+  
+  .periodBtn {
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+    background: var(--panel-2);
+    color: var(--muted);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+  
+    &:hover {
+      background: var(--panel);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+  
+    &.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+    }
+  }
+  
+  .timeInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  
+    span {
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+
+  .fieldsInfo {
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: var(--panel);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font-size: 12px;
+    line-height: 1.4;
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .loadingText {
+    color: var(--primary);
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    &::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      border: 2px solid var(--primary);
+      border-top: 2px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  }
+
+  .noFieldsText {
+    color: var(--danger);
+  }
+
+  .availableFieldsText {
+    color: var(--success);
+  }
+
+  .loadingOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    animation: fadeIn 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .loadingContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .loadingSpinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border);
+    border-top: 3px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  .loadingTextLarge {
+    color: var(--text);
+    font-size: 16px;
+    margin-top: 16px;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  .chartContainer {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .panel {
+    animation: fadeIn 0.4s ease-out;
+  }
+
+  // Keyframes для анимаций
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, var(--panel-2) 25%, var(--panel) 50%, var(--panel-2) 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+  }
+
+  .skeletonText {
+    height: 16px;
+    margin: 4px 0;
+  }
+
+  .skeletonField {
+    height: 40px;
+    margin: 8px 0;
+  }

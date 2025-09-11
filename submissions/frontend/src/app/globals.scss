@@ -1,0 +1,87 @@
+/* c:\testovoe\influxdb-fullstack-test\submissions\frontend\src\app\globals.scss */
+:root {
+  --bg: #0b1020;
+  --panel: #12172a;
+  --panel-2: #0f1425;
+  --text: #eef1f7;
+  --muted: #a5adc6;
+  --primary: #4c8cff;
+  --primary-2: #2e6dff;
+  --border: #1c2340;
+  --success: #1ca67a;
+  --warning: #ffb020;
+  --danger: #ff5171;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(1200px 800px at 10% 0%, #0f1530 0%, var(--bg) 55%) no-repeat fixed;
+  color: var(--text);
+}
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.panel {
+  background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hr {
+  height: 1px;
+  background: var(--border);
+  border: 0;
+  margin: 12px 0;
+}
+
+.btn {
+  padding: 10px 14px;
+  border: 1px solid var(--primary);
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-2) 100%);
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn:disabled { opacity: .6; cursor: default; }
+
+.input, .select {
+  padding: 10px 12px;
+  background: #0b1022;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+}
+.input:focus, .select:focus { border-color: var(--primary); }
+
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 999px;
+  background: #1b2140;
+  border: 1px solid var(--border);
+}
+
+select, button, input {
+  font-family: inherit;
+  font-size: inherit;
+}
